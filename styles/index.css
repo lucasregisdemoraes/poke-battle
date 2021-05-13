@@ -1,0 +1,30 @@
+/*      =====   MAIN    =====    */
+main{
+    display: flex;
+}
+main #button{
+    color: var(--white);
+    background-color: var(--red);
+    font-size: 30px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 300px;
+    height: 90px;
+    border-radius: 35px;
+    margin: auto;
+    transition: .2s;
+}
+/* main #button::after{
+    background-color: blue;
+    display: block;
+    content: "";
+    width: 300px;
+    height: 90px;
+} */
+main #button:hover{
+    background-color: var(--darkRed);
+}
+

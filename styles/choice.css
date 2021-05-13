@@ -1,0 +1,15 @@
+/*      =====   MAIN    =====    */
+main{
+    display: flex;
+    flex-basis: 250px;
+    justify-content: center;
+    padding: 100px;
+    /* grid-template-columns: repeat(auto-fit, 250px); */
+    /* gap: 100px; */
+    margin: auto;
+}
+.card{
+    background-color: turquoise;
+    width: 250px;
+    height: 400px;
+}

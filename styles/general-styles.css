@@ -1,0 +1,43 @@
+/*      =====   VARIABLE    =====    */
+:root{
+    --red: red;
+    --darkRed: rgb(216, 0, 0);
+    --lightRed: rgb(255, 93, 93);
+    --black: black;
+    --white: white;
+    --lightGreen: rgb(226, 255, 226);
+}
+
+/*      =====   GENERAL STYLES    =====    */
+body{
+    margin: 0;
+    font-family: sans-serif;
+    /* height: 100vh; */
+}
+
+
+/*      =====   HEADER    =====    */
+header{
+    background-color: var(--red);
+    text-align: center;
+    box-sizing: border-box;
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+header h1{
+    color: var(--white);
+    margin: 0;
+    font-size: 35px;
+}
+header p{
+    font-size: 25px;
+    margin: 10px 0 0 0;
+}
+
+/*      =====   MAIN    =====    */
+main{
+    background-color: var(--lightGreen);
+    min-height: 85vh;
+}
