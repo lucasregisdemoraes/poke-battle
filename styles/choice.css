@@ -1,7 +1,8 @@
 /*      =====   MAIN    =====    */
 main{
     display: flex;
-    flex-basis: 250px;
+    flex-wrap: wrap;
+    /* flex-basis: 250px; */
     justify-content: center;
     padding: 100px;
     /* grid-template-columns: repeat(auto-fit, 250px); */
@@ -9,7 +10,10 @@ main{
     margin: auto;
 }
 .card{
+    flex: 1 1 300px;
+    max-width: 200px;
+    margin: 30px;
     background-color: turquoise;
-    width: 250px;
-    height: 400px;
+    width: 200px;
+    height: 350px;
 }
