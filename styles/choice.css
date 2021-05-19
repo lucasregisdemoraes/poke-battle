@@ -1,19 +1,22 @@
 /*      =====   MAIN    =====    */
 main{
-    display: flex;
-    flex-wrap: wrap;
-    /* flex-basis: 250px; */
-    justify-content: center;
-    padding: 100px;
-    /* grid-template-columns: repeat(auto-fit, 250px); */
-    /* gap: 100px; */
-    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    row-gap: 100px;
+    justify-content: space-evenly;
+    padding: 100px 0;
 }
 .card{
-    flex: 1 1 300px;
-    max-width: 200px;
-    margin: 30px;
+    text-align: center;
     background-color: turquoise;
-    width: 200px;
     height: 350px;
+    padding: 20px 0;
+}
+
+.card img {
+    width: 150px;
+    height: 150px;
+}
+.card span {
+    display: block;
 }
