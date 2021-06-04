@@ -1,5 +1,4 @@
 // Pokemons
-
 var bulbasaur = {
     nome: "Bulbasaur",
     vida: {
@@ -9,7 +8,7 @@ var bulbasaur = {
     ataque: 92,
     defesa: 92,
     spAtaque: 121,
-    spDesefa: 121,
+    spDefesa: 121,
 }
 
 var charmander = {
@@ -21,7 +20,7 @@ var charmander = {
     ataque: 98,
     defesa: 81,
     spAtaque: 112,
-    spDesefa: 94,
+    spDefesa: 94,
 }
 
 var squirtle = {
@@ -33,30 +32,75 @@ var squirtle = {
     ataque: 90,
     defesa: 121,
     spAtaque: 94,
-    spDesefa: 119,
+    spDefesa: 119,
 }
 
 const pokemons = [bulbasaur, charmander, squirtle]
 
 // Sorteia Pokemon da máquina
-
+var pokemonMaquina = escolhePokemonMaquina() 
 function escolhePokemonMaquina() {
     var numeroPokemon = parseInt(Math.random() * pokemons.length)
     var pokemonMaquina = pokemons[numeroPokemon]
     return pokemonMaquina
 }
 
-var pokemonMaquina = escolhePokemonMaquina() 
 
 // vê qual foi o pokemon escolhido pelo jogador
 
 
+pokemons.forEach(mostraPokemon)
+function mostraPokemon(element) {
+    let main = document.querySelector("main")
 
-function escolheuBulbasaur() {
-    pokemon = pokemons[0]
-    console.log(pokemon)
+    let card = document.createElement("div")
+    card.classList = "card"
+
+    let imagemPokemon = document.createElement("img")
+
+    let nomePokemon = document.createElement("span")
+    nomePokemon.innerText = element.nome
+
+    let vidaPokemon = document.createElement("span")
+    vidaPokemon.innerText = `Vida: ${element.vida.vidaTotal}`
+
+    let ataquePokemon = document.createElement("span")
+    ataquePokemon.innerText = `Ataque: ${element.ataque}`
+
+    let defesaPokemon = document.createElement("span")
+    defesaPokemon.innerText = `Defesa: ${element.defesa}`
+
+    let spAtaquePokemon = document.createElement("span")
+    spAtaquePokemon.innerText = `Ataque Especial: ${element.spAtaque}`
+
+    let spDefesaPokemon = document.createElement("span")
+    spDefesaPokemon.innerText = `Defesa Especial: ${element.spDefesa}`
+
+    card.appendChild(imagemPokemon)
+    card.appendChild(nomePokemon)
+    card.appendChild(vidaPokemon)
+    card.appendChild(ataquePokemon)
+    card.appendChild(defesaPokemon)
+    card.appendChild(spAtaquePokemon)
+    card.appendChild(spDefesaPokemon)
+
+    main.appendChild(card)
+}
+
+let card = document.getElementsByClassName('card')
+card.addEventListener("click", pokemonEscolhido, true)
+
+console.log(card)
+
+
+function pokemonEscolhido() {
+    console.log(this)
 }
 
 
+// let pokemonJogador = pokemonEscolhido()
 
+
+
+// console.log(pokemonJogador)
 
