@@ -56,6 +56,8 @@ function mostraPokemon(element) {
     let card = document.createElement("div")
     card.classList = "card"
 
+    card.id = element.nome
+
     let imagemPokemon = document.createElement("img")
 
     let nomePokemon = document.createElement("span")
@@ -85,20 +87,39 @@ function mostraPokemon(element) {
     card.appendChild(spDefesaPokemon)
 
     main.appendChild(card)
+
+
+    var pokemonSelecionado = document.querySelector(`#${element.nome}`);
+    pokemonSelecionado.addEventListener("click", pokemonEscolhido())
+
+    // console.log(pokemonEscolhido)
+    function pokemonEscolhido() {
+        // let abc = this.element
+
+        console.log(this)
+        // let pokemonEscolhido = element.nome
+
+        // return pokemonEscolhido
+    }
+
 }
 
-let card = document.getElementsByClassName('card')
-card.addEventListener("click", pokemonEscolhido, true)
 
-console.log(card)
-
-
-function pokemonEscolhido() {
-    console.log(this)
-}
-
-
+// console.log(pokemonEscolhido)
 // let pokemonJogador = pokemonEscolhido()
+
+// let card = document.getElementsByClassName('card')
+// card.addEventListener("click", pokemonEscolhido, true)
+// 
+// console.log(card)
+
+
+// function pokemonEscolhido() {
+    // console.log(this)
+// }
+
+
+
 
 
 
