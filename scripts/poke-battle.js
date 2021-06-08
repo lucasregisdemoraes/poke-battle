@@ -45,11 +45,9 @@ function escolhePokemonMaquina() {
     return pokemonMaquina
 }
 
-
-// vê qual foi o pokemon escolhido pelo jogador
-
-
+// Mostra cartas dos Pokemons
 pokemons.forEach(mostraPokemon)
+
 function mostraPokemon(element) {
     let main = document.querySelector("main")
 
@@ -87,41 +85,36 @@ function mostraPokemon(element) {
     card.appendChild(spDefesaPokemon)
 
     main.appendChild(card)
+}
+
+// Vê o Pokemon selecionado
+pokemons.forEach(function(element){
+    let elemento = `#${element.nome}`
+    let elementos = main.querySelector(elemento)
+    elementos.addEventListener("click", function(){
+        let main = document.querySelector("main")
+        let mensagem = document.createElement("span")
+        mensagem.id = "mensagem"
+        mensagem.innerText = `Você escolheu ${element.nome}`
+        main.appendChild(mensagem)
+    })
+})
 
 
-    var pokemonSelecionado = document.querySelector(`#${element.nome}`);
-    pokemonSelecionado.addEventListener("click", pokemonEscolhido())
-
-    // console.log(pokemonEscolhido)
-    function pokemonEscolhido() {
-        // let abc = this.element
-
-        console.log(this)
-        // let pokemonEscolhido = element.nome
-
-        // return pokemonEscolhido
-    }
-
+function pokemonEscolhido() {
+    let mensagem = document.querySelector("#mensagem").innerText
+    return mensagem
 }
 
 
-// console.log(pokemonEscolhido)
-// let pokemonJogador = pokemonEscolhido()
+document.querySelector("header").addEventListener("click", function() {
 
-// let card = document.getElementsByClassName('card')
-// card.addEventListener("click", pokemonEscolhido, true)
-// 
-// console.log(card)
+    let pokemonJogador = pokemonEscolhido()
 
+    console.log(pokemonJogador);
+})
 
-// function pokemonEscolhido() {
-    // console.log(this)
-// }
+// Como tirar uma variavel de dentro de uma função???
 
 
-
-
-
-
-// console.log(pokemonJogador)
 
