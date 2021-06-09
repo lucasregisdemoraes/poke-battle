@@ -38,6 +38,7 @@ header p{
 
 /*      =====   MAIN    =====    */
 main{
-    background-color: var(--lightGreen);
+    background-color: var(--white);
     min-height: 85vh;
+    position: relative;
 }

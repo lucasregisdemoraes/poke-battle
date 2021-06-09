@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,17 +9,47 @@
     <link rel="stylesheet" href="../styles/general-styles.css">
     <link rel="stylesheet" href="../styles/battle.css">
 </head>
+
 <body>
     <header>
         <h1>Poke<span>Battle</span></h1>
         <p>Começou a batalha</p>
     </header>
-
+    
     <main>
-        
+        <div id="pokemonMaquina" class="pokemon">
+            
+            <div id="barraVidaMaquina" class="barraVida">
+                <span id="textoVidaMaquina" class="textoVida"></span>
+                <div id="quantidadeBarraVidaMaquina" class="quantidadeBarraVida">
+                </div>
+            </div>
+            <div class="sombraPokemon"></div>
+        </div>
+
+        <div id="pokemonJogador" class="pokemon">
+
+            <div id="barraVidaJogador" class="barraVida">
+                <div id="quantidadeBarraVidaJogador" class="quantidadeBarraVida">
+                    <span id="textoVidaJogador" class="textoVida"></span>
+                </div>
+            </div>
+            <div class="sombraPokemon"></div>
+        </div>
+
+        <div id="ataquesDiv">
+            <ul>
+                <li>Ataque</li>
+                <li>Ataque</li>
+                <li>Ataque</li>
+                <li>Ataque</li>
+            </ul>
+        </div>
 
     </main>
 
-    <script src="../scripts/poke-battle.js"></script>
+    <!-- <script src="../scripts/poke-battle.js"></script> -->
+    <script src="../scripts/battle.js"></script>
 </body>
+
 </html>
