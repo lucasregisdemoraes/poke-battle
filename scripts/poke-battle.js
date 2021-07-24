@@ -1,97 +1,12 @@
-// Pokemons
-var bulbasaur = {
-    nome: "Bulbasaur",
-    vida: {
-       vidaTotal: 200,
-       vidaAtual: 200, 
-    },
-    tipo: "planta",
-    ataque: 92,
-    defesa: 92,
-    spAtaque: 121,
-    spDefesa: 121,
-}
-var charmander = {
-    nome: "Charmander",
-    vida: {
-        vidaTotal: 188,
-        vidaAtual: 188, 
-    },
-    tipo: "fogo",
-    ataque: 98,
-    defesa: 81,
-    spAtaque: 112,
-    spDefesa: 94,
-}
-var squirtle = {
-    nome: "Squirtle",
-    vida: {
-        vidaTotal: 198,
-        vidaAtual: 198, 
-    },
-    tipo: "agua",
-    ataque: 90,
-    defesa: 121,
-    spAtaque: 94,
-    spDefesa: 119,
-}
-var treecko = {
-    nome: "Treecko",
-    vida: {
-        vidaTotal: 198,
-        vidaAtual: 198, 
-    },
-    tipo: "planta",
-    ataque: 90,
-    defesa: 121,
-    spAtaque: 94,
-    spDefesa: 119,
-}
-var torchic = {
-    nome: "Torchic",
-    vida: {
-        vidaTotal: 198,
-        vidaAtual: 198, 
-    },
-    tipo: "fogo",
-    ataque: 90,
-    defesa: 121,
-    spAtaque: 94,
-    spDefesa: 119,
-}
-var mudkip = {
-    nome: "Mudkip",
-    vida: {
-        vidaTotal: 198,
-        vidaAtual: 198, 
-    },
-    tipo: "agua",
-    ataque: 90,
-    defesa: 121,
-    spAtaque: 94,
-    spDefesa: 119,
-}
-var chikorita = {
-    nome: "Chikorita",
-    vida: {
-        vidaTotal: 198,
-        vidaAtual: 198, 
-    },
-    tipo: "planta",
-    ataque: 90,
-    defesa: 121,
-    spAtaque: 94,
-    spDefesa: 119,
-}
-const pokemons = [bulbasaur, charmander, squirtle, treecko, torchic, mudkip, chikorita]
+// Pega Pokemons do sessionStorage
+var pokemons = JSON.parse(sessionStorage.pokemons)
 
 // Mostra cartas dos Pokemons
 pokemons.forEach(mostraPokemon)
-
 function mostraPokemon(element) {
     let main = document.querySelector("main")
-
     let card = document.createElement("div")
+
     card.classList = "card"
 
     if(element.tipo == "planta") {
@@ -136,7 +51,15 @@ function mostraPokemon(element) {
     main.appendChild(card)
 }
 
-// Vê o Pokemon selecionado
+// Função sortear Pokemon da máquina
+function sorteiaPokemonMaquina() {
+    var numeroPokemon = parseInt(Math.random() * pokemons.length)
+    var pokemonMaquina = JSON.stringify(pokemons[numeroPokemon])
+    // Coloca Pokemon da máquina no sessionStorage
+    sessionStorage.setItem('pokemonMaquina', pokemonMaquina)
+}
+
+// Vê o Pokemon selecionado e sorteia Pokemon da máquina
 pokemons.forEach(function(element){
     let elemento = `#${element.nome}`
     let elementos = main.querySelector(elemento)
@@ -145,21 +68,14 @@ pokemons.forEach(function(element){
         mensagem.style.display = "block"
         let mensagemSpan = document.getElementById("mensagemSpan")
         mensagemSpan.innerText = `Você escolheu ${element.nome}`
+        
+        // Coloca Pokemon selecionado no sessionStorage
+        sessionStorage.setItem('pokemonEscolhido', JSON.stringify(element))
+
+        // Sorteia Pokemon da máquina
+        sorteiaPokemonMaquina()
     })
 })
-
-
-
-// Como tirar uma variavel de dentro de uma função???
-
-
-// Sorteia Pokemon da máquina
-var pokemonMaquina = escolhePokemonMaquina() 
-function escolhePokemonMaquina() {
-    var numeroPokemon = parseInt(Math.random() * pokemons.length)
-    var pokemonMaquina = pokemons[numeroPokemon]
-    return pokemonMaquina
-}
 
 
 
